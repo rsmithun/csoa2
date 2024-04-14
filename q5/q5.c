@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-long long int binarysearch(long long int *array, long long int x, long long int iter);
+extern long long int binarysearch(long long int *array, long long int x, long long int *iter);
 
 int main(){
 
@@ -13,9 +13,9 @@ int main(){
     long long int x;
     scanf("%lld", &x);
 
-    long long int iter = 0;
+    long long int iter;
 
-    long long int result = binarysearch(arr, x, iter);
+    long long int result = binarysearch(arr, x, &iter);
 
     if (result == -1){
         printf("-1");

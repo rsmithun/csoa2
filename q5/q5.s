@@ -9,7 +9,7 @@ binarysearch:
 .whileloop:
     inc %r11
     cmp %r9, %r8
-    jge .notfound  # end if left > right
+    jg .notfound  # end if left > right
 
     mov %r8, %r14   # save left
     mov %r9, %r15   # save right
@@ -22,8 +22,8 @@ binarysearch:
 
     cmp %rsi, %rbx
     je .found
-    jge .updateleft
-    jle .updateright
+    jl .updateleft
+    jg .updateright
 
 .found:
     mov %r10, %rax
@@ -45,6 +45,6 @@ binarysearch:
     jmp .whileloop
 
 .done:
-    mov %rcx, %rdx
+    mov %rcx, (%rdx)
     ret
 

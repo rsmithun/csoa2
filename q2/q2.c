@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-long long int nCr(long long int n, long long int r);
+extern long long int nCr(long long int n, long long int r);
 
 int main(){
     long long int n, r;
